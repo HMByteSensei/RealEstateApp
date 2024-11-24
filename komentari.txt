@@ -1,0 +1,80 @@
+Napomena: U svim zadacima bih promijenio ovaj jednostavni sadrzaj 
+koji je definisan sa alt u img tagu, tj ove poruke koje se prikazuju ako 
+se slika ne uspije očitati su prejednostavne i ja bih to svugdje 
+izmijenio da poruke budu deskriptivnije.
+
+Komentari za meni.html i meni.css:
+
+Čim sam otvorio prjekat, odnosno meni.txt primjetio sam da kada kliknem na neki od linkova u 
+nav-baru, otvori se trazena stranica, međutim kasnije ako kliknem na neki
+drugi link, ostaje mi otvorena ona stranica koju otvara link na koji prvi kliknem u 
+nav-baru.
+
+Pozitivne strane:
+- Jednostavna i pregledan kod menija.
+- Lak za implementaciju i pregledan dizajn.
+
+Negativne strane:
+- Nema ikona koje bi olakšale snalaženje.
+- Meni je statičan i bez dinamičnih efekata na hover.
+
+Kako bih ja uradio drugačije:
+- Dodao sam ikone ispod svakog linka za bolju korisničku interakciju.
+- Implementirao sam animaciju za hover efekte kako bi meni bio atraktivniji.
+- Dodao sam da otvara svaki lik u novoj stranici
+
+Komentari za nekretnine.html i nekretnine.css:
+
+Negativne strane:
+- Slike se ne mogu prikazati jer ne postoji Resources folder sa slikama kojeg
+koristimo u "img" tagu (pored toga na početku navedena napomena)
+
+Pozitivna strana:
+- Lahko se snaci budući da je lijepo struktruiran fajl
+
+Šta bih promijenio:
+- Dodao bih slike
+- Koristio bih figure i figcaption radi boljeg struktuiranja
+sadrzaja. 
+
+Pokusaji: prvo sam stavio da bude "justify-content: center", s tim
+sam dobio isti stil za sekciju "Poslovni prostor". Medutim, na Piazza sam procitao
+da ste napisali da treba biti "flex-start", pa sam onda koristio margin-left i
+margin-right da postignem sto slicniji izgled.
+Pokusao sam razne kombinacije s "calc" da dobijem sto slicniji izgled (tj
+ubacivao sam razne vrijednosti u "margin-left / right: calc(...)").
+
+--------------------------------!!!BITNO ZA ZADATAK 2!!!
+Na kraju sam postigao izgled (makar na mom skrinu koji je bas
+slican pocetnom tj vasem skrinu s gridom; mada mozda moze zavisiti od sirine
+skrina iako sam stavljao da jedinice budu u "vw" i "%" a takoder i u "px" buduci
+da su dimenzije koje ste dali oznacene u "px")
+
+Ustvari upravo sam pretvorio px u rem pa se nadam da nece biti problema.
+(Ovo sam uradio samo u funkciji calc a ne u cijelom css)
+--------------------------------------------------------------------------------
+
+Komentari za detalji.html i detalji.css:
+
+Greska u ovom kodu u liniji: "img src="/Resources/stan/stan1.jpg" alt="Nekretnina""
+budući da ne postoji Resources folder sa slikama (za sad).
+
+Pored dodavanja slike, ja bih u CSS-u za #kolona1, 
+#kolona2, i #opis izbacio align-self: auto; budući da se ono 
+podrazumijeva ili bih sve odjednom to definisao.
+
+Također na vise mjesta se spominje: "border: 1px solid #000;"
+kao i "margin: 20px", te bih to isto stavio u jednan zajednicki selektor.
+
+Komentari za vijesti:
+- Implementirao sam vijesti.html i vijesti.css.
+- Dodao sam vijesti u meni, pa kada korisnik iz meni-a klikne na vijesti otvori se odgovarajuca stranica.
+
+--------------------------------!!!BITNO ZA ZADATAK 4!!!
+Na pocetku sam koristio medukontejnere, medutim na Piazza ste
+napisali da ni to ne smije pa sam izbacio / zakomentirao
+medukontejnere.
+
+Iako sam mogao koristiti pseudo element nth-of-type ili nth-child ili tako nesto,
+ipak sam se odlucio da ih ne koristim vec da koristim klase.
+--------------------------------------------------------
