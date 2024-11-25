@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="bs-BA">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Statistika Nekretnina</title>
+    <!-- ustvari ipak ne moramo implementirati css jer ne pise u zadatku -->
+    <!-- <link rel="stylesheet" href="../css/statistika.css" /> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../Scripts/SpisakNekretnina.js"></script>
+    <script src="../Scripts/StatistikaNekretnina.js"></script>
+    <script src="../Scripts/nekretnine.js"></script>
+    <script src="../Scripts/statistika.js"></script>
+  </head>
+  <body>
+    <h1>Statistika Nekretnina</h1>
+    <div>
+      <h3>Unesite periode</h3>
+      <div id="periodi">
+        <div>
+          <label>Od: <input type="number" id="periodOd1" /></label>
+          <label>Do: <input type="number" id="periodDo1" /></label>
+        </div>
+      </div>
+      <button onclick="dodajPeriod()">Dodaj period</button>
+    </div>
+    <div>
+      <h3>Unesite raspone cijena</h3>
+      <div id="rasponiCijena">
+        <div>
+          <label>Od: <input type="number" id="cijenaOd1" /></label>
+          <label>Do: <input type="number" id="cijenaDo1" /></label>
+        </div>
+      </div>
+      <button onclick="dodajRasponCijena()">Dodaj raspon cijena</button>
+    </div>
+    <button onclick="iscrtajHistogram()">Iscrtaj Histogram</button>
+    <div id="histogrami"></div>
+  </body>
+</html>
