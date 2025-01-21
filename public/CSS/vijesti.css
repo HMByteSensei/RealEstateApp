@@ -1,0 +1,171 @@
+/* Buduci da se ne mogu koristiti medukontejneri u htmlu iako sam vec uradio trazeno
+s medukontejnerima, evo onda ovako ispravljena verzija bez medukontejnera */
+
+.news-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.glavnaVijest {
+  grid-column: span 4;
+  width: 100%;
+  background-color: lightblue;
+  aspect-ratio: 2 / 1;
+}
+
+.glavnaVijest img {
+  width: 100%;
+  height: auto;
+}
+
+.visokaVijest {
+  background-color: lightyellow;
+  grid-row: span 2;
+  aspect-ratio: 1 / 2;
+}
+
+.kvadratnaVijest {
+  background-color: lightcoral;
+  aspect-ratio: 1 / 1;
+}
+
+.visoka1 {
+  grid-row: 2 / 4;
+  grid-column: 1;
+}
+
+.kvadratna1 {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.kvadratna2 {
+  grid-row: 3;
+  grid-column: 2;
+}
+
+.visoka2 {
+  grid-row: 2 / 4;
+  grid-column: 4;
+}
+
+.kvadratna3 {
+  grid-row: 2;
+  grid-column: 3;
+}
+
+.kvadratna4 {
+  grid-row: 3;
+  grid-column: 3;
+}
+
+.kvadratna5 {
+  grid-row: 4;
+  grid-column: 1;
+}
+
+.kvadratna6 {
+  grid-row: 4;
+  grid-column: 2;
+}
+
+.visoka3 {
+  grid-row: 4 / 6;
+  grid-column: 3;
+}
+
+.visoka4 {
+  grid-row: 4 / 6;
+  grid-column: 4;
+}
+
+.kvadratna7 {
+  grid-row: 5;
+  grid-column: 1;
+}
+
+.kvadratna8 {
+  grid-row: 5;
+  grid-column: 2;
+}
+
+@media (max-width: 800px) {
+  .news-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .glavnaVijest {
+    grid-column: span 2;
+    aspect-ratio: 1 / 1;
+  }
+
+  .visokaVijest {
+    grid-row: span 2;
+    grid-column: span 1;
+  }
+
+  .kvadratnaVijest {
+    grid-row: auto;
+    grid-column: span 1;
+  }
+
+  .visoka1 {
+    grid-row: auto / span 2;
+    grid-column: 1;
+  }
+
+  .kvadratna1 {
+    grid-row: auto;
+    grid-column: 2;
+  }
+
+  .kvadratna2 {
+    grid-row: auto;
+    grid-column: 2;
+  }
+
+  .visoka2 {
+    grid-row: 4 / span 2;
+    grid-column: 2;
+  }
+
+  .kvadratna3 {
+    grid-row: auto;
+    grid-column: 1;
+  }
+
+  .kvadratna4 {
+    grid-row: auto;
+    grid-column: 1;
+  }
+
+  .kvadratna5 {
+    grid-row: 6;
+    grid-column: 1;
+  }
+
+  .kvadratna6 {
+    grid-row: 7;
+    grid-column: 1;
+  }
+
+  .visoka3 {
+    grid-row: auto / span 2;
+    grid-column: 1;
+  }
+
+  .visoka4 {
+    grid-row: auto / span 2;
+    grid-column: 2;
+  }
+
+  .kvadratna7 {
+    grid-row: auto;
+    grid-column: 2;
+  }
+
+  .kvadratna8 {
+    grid-row: auto;
+    grid-column: 2;
+  }
+}
