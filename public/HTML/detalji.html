@@ -35,15 +35,79 @@
   </div>
 
   <h3>UPITI</h3>
-  <div id="upiti">
-    <!-- Upiti će biti dodani ovdje putem JavaScript-a -->
+  <div id="upiti-container">
+    <div id="upiti" class="carousel">
+      <!-- Upiti će biti dodani ovdje putem JavaScript-a -->
+    </div>
+    <div class="carousel-buttons">
+      <button id="prev-upiti"><i class="fa-solid fa-arrow-left"></i></button>
+      <button id="next-upiti"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
   </div>
-  <div class="carousel-buttons">
-    <button id="prev"><i class="fa-solid fa-arrow-left"></i></button>
-    <button id="next"><i class="fa-solid fa-arrow-right"></i></button>
+
+  <hr>
+
+  <h3>ZAHTJEVI</h3>
+  <div id="zahtjevi-container">
+    <div id="zahtjevi" class="carousel">
+      <!-- Zahtjevi će biti dodani ovdje putem JavaScript-a -->
+    </div>
+    <div class="carousel-buttons">
+      <button id="prev-zahtjevi"><i class="fa-solid fa-arrow-left"></i></button>
+      <button id="next-zahtjevi"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+  </div>
+
+  <hr>
+
+  <h3>PONUDE</h3>
+  <div id="ponude-container">
+    <div id="ponude" class="carousel">
+      <!-- Ponude će biti dodane ovdje putem JavaScript-a -->
+    </div>
+    <div class="carousel-buttons">
+      <button id="prev-ponude"><i class="fa-solid fa-arrow-left"></i></button>
+      <button id="next-ponude"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
   </div>
 
   <div id="nekretnine-container"></div>
+
+  <hr>
+
+  <form id="interesovanje-form">
+    <label for="tip-interesovanja">Tip interesovanja:</label>
+    <select id="tip-interesovanja" name="tip-interesovanja">
+      <option value="upit">Upit</option>
+      <option value="zahtjev">Zahtjev</option>
+      <option value="ponuda">Ponuda</option>
+    </select>
+  
+    <div id="upit-fields" class="interesovanje-fields">
+      <label for="upit-tekst">Tekst upita:</label>
+      <textarea id="upit-tekst" name="upit-tekst"></textarea>
+    </div>
+  
+    <div id="zahtjev-fields" class="interesovanje-fields">
+      <label for="zahtjev-tekst">Tekst zahtjeva:</label>
+      <textarea id="zahtjev-tekst" name="zahtjev-tekst"></textarea>
+      <label for="zahtjev-datum">Traženi datum:</label>
+      <input type="date" id="zahtjev-datum" name="zahtjev-datum">
+    </div>
+  
+    <div id="ponuda-fields" class="interesovanje-fields">
+      <label for="ponuda-tekst">Tekst ponude:</label>
+      <textarea id="ponuda-tekst" name="ponuda-tekst"></textarea>
+      <label for="ponuda-cijena">Cijena ponude:</label>
+      <input type="number" id="ponuda-cijena" name="ponuda-cijena">
+      <label for="ponuda-datum">Datum ponude:</label>
+      <input type="date" id="ponuda-datum" name="ponuda-datum">
+      <label for="id-vezane-ponude">ID vezane ponude:</label>
+      <select id="id-vezane-ponude" name="id-vezane-ponude" disabled></select>
+    </div>
+  
+    <button type="submit">Dodaj interesovanje</button>
+  </form>
 
   <script src="../scripts/carousel.js"></script>
   <script src="../scripts/PoziviAjax.js"></script>

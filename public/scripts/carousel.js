@@ -1,9 +1,7 @@
-function postaviCarousel(glavniElement, sviElementi, indeks = 0, loadNextUpiti) {
+function postaviCarousel(glavniElement, sviElementi, indeks = 0) {
   if (!glavniElement || !Array.isArray(sviElementi) || sviElementi.length === 0) {
     return null;
   }
-
-  let allUpitiLoaded = false;
 
   function prikaziElement() {
     glavniElement.innerHTML = "";
@@ -25,10 +23,6 @@ function postaviCarousel(glavniElement, sviElementi, indeks = 0, loadNextUpiti) 
     prikaziElement();
   }
 
-  function isAtEnd() {
-    return indeks === sviElementi.length - 1;
-  }
-
   function updateElements(noviElementi) {
     sviElementi = noviElementi;
     prikaziElement();
@@ -39,7 +33,6 @@ function postaviCarousel(glavniElement, sviElementi, indeks = 0, loadNextUpiti) 
   return {
     fnLijevo,
     fnDesno,
-    isAtEnd,
     updateElements,
   };
 }

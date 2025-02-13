@@ -232,7 +232,7 @@ const PoziviAjax = (() => {
         ajax.send();
     }
     
-    function getNextUpiti(nekretninaId, page, fnCallback) {
+    function getNextUpiti(nekretninaId, fnCallback) {
         let ajax = new XMLHttpRequest();
         ajax.onreadystatechange = function () {
           if (ajax.readyState == 4) {
@@ -243,26 +243,57 @@ const PoziviAjax = (() => {
             }
           }
         };
-        ajax.open("GET", `/next/upiti/nekretnina${nekretninaId}?page=${page}`, true);
+        ajax.open("GET", `/next/upiti/nekretnina/${nekretninaId}`, true);
         ajax.send();
       }
       
-      function getNekretninaDetails(nekretninaId, fnCallback) {
+    function getNekretninaDetails(nekretninaId, fnCallback) {
+    let ajax = new XMLHttpRequest();
+    ajax.onreadystatechange = function () {
+        if (ajax.readyState == 4) {
+        if (ajax.status == 200) {
+            fnCallback(null, JSON.parse(ajax.responseText));
+        } else {
+            fnCallback("error", null);
+        }
+        }
+    };
+    ajax.open("GET", `/nekretnina/${nekretninaId}`, true);
+    ajax.send();
+    }
+    function dodajInteresovanje(nekretninaId, data, fnCallback) {
         let ajax = new XMLHttpRequest();
         ajax.onreadystatechange = function () {
           if (ajax.readyState == 4) {
-            if (ajax.status == 200) {
+            if (ajax.status == 201) {
               fnCallback(null, JSON.parse(ajax.responseText));
             } else {
               fnCallback("error", null);
             }
           }
         };
-        ajax.open("GET", `/nekretnina/${nekretninaId}`, true);
-        ajax.send();
+        ajax.open("POST", `/nekretnina/${nekretninaId}/interesovanje`, true);
+        ajax.setRequestHeader("Content-Type", "application/json");
+        ajax.send(JSON.stringify(data));
       }
-    
+      
+    function getVezanePonude(nekretninaId, fnCallback) {
+    let ajax = new XMLHttpRequest();
+    ajax.onreadystatechange = function () {
+        if (ajax.readyState == 4) {
+        if (ajax.status == 200) {
+            fnCallback(null, JSON.parse(ajax.responseText));
+        } else {
+            fnCallback("error", null);
+        }
+        }
+    };
+    ajax.open("GET", `/nekretnina/${nekretninaId}/ponude`, true);
+    ajax.send();
+    }
     return {
+        getVezanePonude: getVezanePonude,
+        dodajInteresovanje: dodajInteresovanje,
         postLogin: impl_postLogin,
         postLogout: impl_postLogout,
         getKorisnik: impl_getKorisnik,
